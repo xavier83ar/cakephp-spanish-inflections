@@ -1,0 +1,19 @@
+{
+    "name": "your-name-here/SpanishInflections",
+    "description": "SpanishInflections plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=5.5.9",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SpanishInflections\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}

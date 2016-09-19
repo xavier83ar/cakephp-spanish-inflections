@@ -18,7 +18,7 @@ Inflector::rules('plural', [
      * Varias esdrújulas que cumplen estos requisitos, sin embargo, permanecen invariables en el plural,
      * como sucede con «cáterin».
      */
-    '/([aeiou][djlnrsy])$/i' => '\1es',
+    '/([aeiou][dlnrsy])$/i' => '\1es',
 
     /**
      * Las palabras terminadas en «ch», que son pocas y todas ellas préstamos de otras lenguas, cuando no se mantienen
@@ -58,7 +58,7 @@ Inflector::rules('singular', [
     /**
      * Terminadas en consonantes y "es", se elimina el "es"
      */
-    '/([aeiou][rdjnlmyzs])es$/i' => '\1',
+    '/([aeiou][rdnlmyzs])es$/i' => '\1',
 
     /**
      * Terminadas en vocal seguida de "s"

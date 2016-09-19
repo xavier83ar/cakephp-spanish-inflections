@@ -22,7 +22,6 @@ class InflectorTest extends TestCase
      */
     public function setUp()
     {
-        mb_internal_encoding('UTF-8');
         parent::setUp();
         include "../../../config/bootstrap.php";
     }
@@ -48,6 +47,7 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('calles', Inflector::pluralize('calle'));
         $this->assertTextEquals('faxes', Inflector::pluralize('fax'));
         $this->assertTextEquals('goles', Inflector::pluralize('gol'));
+        $this->assertTextEquals('viajes', Inflector::pluralize('viaje'));
     }
 
     /**
@@ -64,5 +64,6 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('punch', Inflector::singularize('punches'));
         $this->assertTextEquals('fax', Inflector::singularize('faxes'));
         $this->assertTextEquals('gol', Inflector::singularize('goles'));
+        $this->assertTextEquals('viaje', Inflector::singularize('viajes'));
     }
 }

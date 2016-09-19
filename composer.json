@@ -2,7 +2,8 @@
     "name": "xavier83ar/cakephp-spanish-inflections",
     "description": "Spanish Inflections plugin for CakePHP",
     "type": "cakephp-plugin",
-    "version": "1.0.2",
+    "version": "1.0.3",
+    "license": "MIT",
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": "~3.0"

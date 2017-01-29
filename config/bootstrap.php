@@ -35,7 +35,7 @@ Inflector::rules('plural', [
     '/(.*)[s|x]$/i' => '\0es',
     '/(.*)[áéíóú][s|x]$/i' => '\0es',
     '/(.*í)z$/iu' => '\1ces',
-    
+
     /**
      * Reglas generales si ninguna otra aplica. Si termina en s, dejamos así, si es un string vacío no reemplazamos,
      * y en otro caso simplemente agregamos una "s"
@@ -66,10 +66,21 @@ Inflector::rules('singular', [
     '/([aáeéioóu])s$/i' => '\1',
 
     /**
-     * Regla general, si ninguna más aplica, si es una sola "s" la dejamos así, string vacío no hacemos nada y 
+     * Regla general, si ninguna más aplica, si es una sola "s" la dejamos así, string vacío no hacemos nada y
      * si termina en "s", la quitamos
      */
     '/^s$/i' => 's',
     '/^$/' => '',
     '/s$/i' => '',
+], true);
+Inflector::rules('uninflected', [
+    /**
+     * Son palabras que solo tienen marca morfológica en plural o que, pese a tener una forma en singular,
+     * el uso habitual es en su forma plural.
+     */
+    'abrelatas', 'albricias', 'alicates', 'andurriales', 'análisis', 'añicos', 'cascarrabias', 'cortaplumas',
+    'creces', 'crisis', 'cuelgacapas', 'enseres', 'esponsales', 'exequias', 'fauces', 'fotosíntesis', 'gafas',
+    'lavacoches', 'limpiabotas', 'maitines', 'mondadientes', 'nupcias', 'parabrisas', 'paracaídas', 'parachoques',
+    'paraguas', 'pararrayos', 'pisapapeles', 'portaaviones', 'quitamanchas', 'rompeolas', 'sacacorchos',
+    'saltamontes', 'salvavidas', 'síntesis', 'trabalenguas', 'viacrucis', 'víveres'
 ], true);

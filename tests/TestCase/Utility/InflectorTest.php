@@ -18,14 +18,14 @@ use Cake\Utility\Inflector;
 class InflectorTest extends TestCase
 {
     /**
-     * 
+     *
      */
     public function setUp()
     {
         parent::setUp();
         include "../../../config/bootstrap.php";
     }
-    
+
     /**
      * @return void
      */
@@ -34,9 +34,9 @@ class InflectorTest extends TestCase
         parent::tearDown();
         Inflector::reset();
     }
-    
+
     /**
-     * 
+     *
      */
     public function testPluralize()
     {
@@ -48,10 +48,13 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('faxes', Inflector::pluralize('fax'));
         $this->assertTextEquals('goles', Inflector::pluralize('gol'));
         $this->assertTextEquals('viajes', Inflector::pluralize('viaje'));
+        $this->assertTextEquals('abrelatas', Inflector::pluralize('abrelatas'));
+        $this->assertTextEquals('análisis', Inflector::pluralize('análisis'));
+        $this->assertTextEquals('crisis', Inflector::pluralize('crisis'));
     }
 
     /**
-     * 
+     *
      */
     public function testSingularize()
     {
@@ -65,5 +68,8 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('fax', Inflector::singularize('faxes'));
         $this->assertTextEquals('gol', Inflector::singularize('goles'));
         $this->assertTextEquals('viaje', Inflector::singularize('viajes'));
+        $this->assertTextEquals('abrelatas', Inflector::singularize('abrelatas'));
+        $this->assertTextEquals('análisis', Inflector::singularize('análisis'));
+        $this->assertTextEquals('crisis', Inflector::singularize('crisis'));
     }
 }

@@ -23,7 +23,6 @@ class InflectorTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        include "../../../config/bootstrap.php";
     }
 
     /**
@@ -48,6 +47,7 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('faxes', Inflector::pluralize('fax'));
         $this->assertTextEquals('goles', Inflector::pluralize('gol'));
         $this->assertTextEquals('viajes', Inflector::pluralize('viaje'));
+        $this->assertTextEquals('bases', Inflector::pluralize('base'));
         $this->assertTextEquals('abrelatas', Inflector::pluralize('abrelatas'));
         $this->assertTextEquals('análisis', Inflector::pluralize('análisis'));
         $this->assertTextEquals('crisis', Inflector::pluralize('crisis'));
@@ -68,6 +68,7 @@ class InflectorTest extends TestCase
         $this->assertTextEquals('fax', Inflector::singularize('faxes'));
         $this->assertTextEquals('gol', Inflector::singularize('goles'));
         $this->assertTextEquals('viaje', Inflector::singularize('viajes'));
+        $this->assertTextEquals('base', Inflector::singularize('bases'));
         $this->assertTextEquals('abrelatas', Inflector::singularize('abrelatas'));
         $this->assertTextEquals('análisis', Inflector::singularize('análisis'));
         $this->assertTextEquals('crisis', Inflector::singularize('crisis'));

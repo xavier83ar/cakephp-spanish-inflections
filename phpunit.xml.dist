@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
     colors="true"
-    processIsolation="false"
+    processIsolation="true"
     stopOnFailure="false"
     syntaxCheck="false"
     bootstrap="./tests/bootstrap.php"
@@ -17,17 +17,6 @@
             <directory>./tests/TestCase</directory>
         </testsuite>
     </testsuites>
-
-    <!-- Setup a listener for fixtures -->
-    <listeners>
-        <listener
-        class="\Cake\TestSuite\Fixture\FixtureInjector"
-        file="./vendor/cakephp/cakephp/src/TestSuite/Fixture/FixtureInjector.php">
-            <arguments>
-                <object class="\Cake\TestSuite\Fixture\FixtureManager" />
-            </arguments>
-        </listener>
-    </listeners>
 
     <!-- Prevent coverage reports from looking in tests and vendors -->
     <filter>

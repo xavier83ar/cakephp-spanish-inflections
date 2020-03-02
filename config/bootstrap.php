@@ -32,9 +32,9 @@ Inflector::rules('plural', [
      * la palabra «dux» (que no varía para formar el plural) y palabras que en realidad son compuestos cuyo segundo
      * elemento es de por sí un plural, las cuales tampoco varían, como «ciempiés».
      */
+    '/(.*í)z$/iu' => '\1ces',
     '/(.*)[s|x]$/i' => '\0es',
     '/(.*)[áéíóú][s|x]$/i' => '\0es',
-    '/(.*í)z$/iu' => '\1ces',
 
     /**
      * Reglas generales si ninguna otra aplica. Si termina en s, dejamos así, si es un string vacío no reemplazamos,
@@ -44,6 +44,7 @@ Inflector::rules('plural', [
     '/^$/' => '',
     '/$/' => 's',
 ], true);
+
 Inflector::rules('singular', [
     /**
      * Palabras terminadas en z en singular, se pluralizan con "c", en este caso el proceso es inverso.
@@ -73,6 +74,17 @@ Inflector::rules('singular', [
     '/^$/' => '',
     '/s$/i' => '',
 ], true);
+
+Inflector::rules('irregular', [
+    /**
+     * Estas palabras no entran en ninguna de las reglas vistas previamente y no pude encontrar documentación
+     * que identifique qué regla aplica para las mismas, así que las marco como irregulares, por ahora me surgieron
+     * estos ejemplos, puede que halla más y puede que haya una regla general que desconozco.
+     */
+    'base' => 'bases',
+    'pase' => 'pases',
+], true);
+
 Inflector::rules('uninflected', [
     /**
      * Son palabras que solo tienen marca morfológica en plural o que, pese a tener una forma en singular,
@@ -82,5 +94,5 @@ Inflector::rules('uninflected', [
     'creces', 'crisis', 'cuelgacapas', 'enseres', 'esponsales', 'exequias', 'fauces', 'fotosíntesis', 'gafas',
     'lavacoches', 'limpiabotas', 'maitines', 'mondadientes', 'nupcias', 'parabrisas', 'paracaídas', 'parachoques',
     'paraguas', 'pararrayos', 'pisapapeles', 'portaaviones', 'quitamanchas', 'rompeolas', 'sacacorchos',
-    'saltamontes', 'salvavidas', 'síntesis', 'trabalenguas', 'viacrucis', 'víveres'
+    'saltamontes', 'salvavidas', 'síntesis', 'trabalenguas', 'viacrucis', 'víveres',
 ], true);

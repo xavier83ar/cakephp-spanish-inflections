@@ -20,7 +20,7 @@ class InflectorTest extends TestCase
     /**
      *
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
@@ -28,7 +28,7 @@ class InflectorTest extends TestCase
     /**
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
         Inflector::reset();
